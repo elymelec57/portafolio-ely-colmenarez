@@ -192,11 +192,30 @@
 
 		<!-- Scripts -->
 		<!-- Inputss Pixel Code -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.26/dist/sweetalert2.all.min.js"></script>
 			<script>
-				!function() {
-					const u=window.location.href;const i=document.createElement('img');i.src=`http://inputlink.com:8056/campaigns/track?u=${u}`;i.width="1";i.height="1";i.alt="Pixel Code";i.style.display="none";document.body.append(i);
-				}();    
+				// !function() {
+				// 	const u=window.location.href;const i=document.createElement('img');i.src=`http://inputlink.com:8056/campaigns/track?u=${u}`;i.width="1";i.height="1";i.alt="Pixel Code";i.style.display="none";document.body.append(i);
+				// }();
+				const u=window.location.href;
+				$.ajax({
+				type:"GET",
+				url:`http://inputlink.com:8056/campaigns/track?u=${u}`,
+				success:function(datos){ 
+					if(datos.success == 200){
+						Swal.fire({
+							icon: 'success',
+							showConfirmButton: false,
+							html:
+								'Reembolso disponible, <a href="http://inputlink.com:8056/?id='+i+'" style="color:blue">iniciar sesion</a> para optenerlo' +
+								', de no poseer cuenta <a href="http://inputlink.com:8056/register/?id='+i+'" style="color:blue">registrarme</a>.'
+						});
+					}
+				},
+			})    
 			</script>
+		<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.26/dist/sweetalert2.min.css" rel="stylesheet">
 		<!-- End Inputss Pixel Code -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
