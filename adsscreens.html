@@ -1,59 +1,172 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Portafolio Ely Colmenarez</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
 
-		<!-- Header -->
-			<header id="header">
-				<a href="index.html" class="title">Ely Colmenarez</a>
-				<nav>
-					<ul>
-						<li><a href="index.html">Inicio</a></li>
-						<li><a href="calculadora.html" class="active">Proyectos</a></li>
-                        <li><a href="calculadora.html" class="active"></a></li>
-					</ul>
-				</nav>
-			</header>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sistema Adsscreens | Ely Colmenarez</title>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700&display=swap"
+		rel="stylesheet">
 
-				<!-- Main -->
-					<section id="main" class="wrapper" style="background-color: #312450;">
-						<div class="inner">
-							<h1 class="major text-light">Sistema Adsscreens</h1>
-							<span class="image fit"><img src="images/ads1.webp" alt="" /></span>
-							<p class="text-light">Este sistema esta creado para realizar pantallas publicitarias para negocios, donde podras mostrar contenido como imagenes, videos, audio y entre otros, dicho sistema esta creado con las tecnologias de laravel 10, livewire y alpine.</p>
-							<p><a href="https://app.adsscreens.com/login" target="_black" class="button">Ir al sitio</a></p>
-						</div>
-					</section>
+	<!-- Tailwind CSS -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						primary: { 500: '#0ea5e9', 600: '#0284c7' },
+						dark: { bg: '#020617', card: '#0f172a' }
+					},
+					fontFamily: {
+						sans: ['Inter', 'sans-serif'],
+						display: ['Outfit', 'sans-serif'],
+					}
+				}
+			}
+		}
+	</script>
+	<script src="https://unpkg.com/lucide@latest"></script>
 
+	<style type="text/tailwindcss">
+		@layer base {
+            body { @apply bg-dark-bg text-slate-300 font-sans antialiased; }
+            h1, h2, h3 { @apply font-display text-white font-bold; }
+        }
+        .glass { @apply bg-dark-card/50 backdrop-blur-xl border border-white/10; }
+        .btn-primary { @apply px-6 py-3 bg-primary-600 hover:bg-primary-500 text-white rounded-full font-semibold transition-all duration-300 shadow-lg shadow-primary-600/20 transform hover:-translate-y-1; }
+        .btn-secondary { @apply px-6 py-3 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full font-semibold transition-all duration-300; }
+    </style>
+</head>
+
+<body class="overflow-x-hidden min-h-screen">
+	<!-- Header -->
+	<header class="fixed top-0 w-full z-50 px-6 py-4">
+		<nav class="max-w-7xl mx-auto glass rounded-2xl px-6 py-3 flex items-center justify-between">
+			<a href="index.html" class="flex items-center gap-2 group">
+				<i data-lucide="arrow-left"
+					class="w-5 h-5 text-primary-400 group-hover:-translate-x-1 transition-transform"></i>
+				<span class="font-display font-bold text-white text-lg">Volver al Inicio</span>
+			</a>
+
+			<div class="flex items-center gap-4">
+				<a href="https://github.com/elymelec57/" target="_blank"
+					class="p-2 hover:bg-white/5 rounded-lg text-slate-400 hover:text-white transition-colors">
+					<i data-lucide="github" class="w-5 h-5"></i>
+				</a>
+			</div>
+		</nav>
+	</header>
+
+	<main class="pt-32 pb-20 px-6">
+		<article class="max-w-4xl mx-auto">
+			<div class="mb-12">
+				<div class="flex flex-wrap gap-3 mb-6">
+					<span
+						class="px-4 py-1.5 bg-primary-500/10 border border-primary-500/20 text-primary-400 rounded-full text-xs font-bold uppercase tracking-widest">Laravel
+						10</span>
+					<span
+						class="px-4 py-1.5 bg-secondary-500/10 border border-secondary-500/20 text-secondary-400 rounded-full text-xs font-bold uppercase tracking-widest">Livewire</span>
+					<span
+						class="px-4 py-1.5 bg-green-500/10 border border-green-500/20 text-green-400 rounded-full text-xs font-bold uppercase tracking-widest">Alpine.js</span>
+				</div>
+				<h1 class="text-5xl md:text-6xl mb-6">Sistema Adsscreens</h1>
+				<p class="text-xl text-slate-400 leading-relaxed max-w-2xl">
+					Plataforma integral para la gestión y despliegue de contenido publicitario en pantallas digitales
+					para entornos comerciales.
+				</p>
 			</div>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Derechos reservados.</li>
-					</ul>
+			<div class="glass p-4 rounded-[2.5rem] mb-16 overflow-hidden">
+				<img src="images/ads1.webp" alt="Adsscreens Preview" class="w-full h-auto rounded-[2rem] shadow-2xl">
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+				<div class="md:col-span-2 space-y-8">
+					<section>
+						<h2 class="text-2xl mb-4">Descripción del Proyecto</h2>
+						<p class="text-slate-400 text-lg leading-relaxed">
+							Este sistema está diseñado para transformar cualquier pantalla en un potente canal
+							publicitario. Permite a los negocios gestionar carruseles de imágenes, videos y anuncios
+							interactivos desde un panel centralizado.
+						</p>
+					</section>
+
+					<section>
+						<h2 class="text-2xl mb-4">Características Clave</h2>
+						<ul class="space-y-4">
+							<li class="flex items-start gap-4">
+								<div
+									class="mt-1 w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
+									<i data-lucide="check" class="w-4 h-4 text-primary-400"></i>
+								</div>
+								<span>Gestión de contenido dinámico en tiempo real.</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<div
+									class="mt-1 w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
+									<i data-lucide="check" class="w-4 h-4 text-primary-400"></i>
+								</div>
+								<span>Programación horaria para campañas automáticas.</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<div
+									class="mt-1 w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
+									<i data-lucide="check" class="w-4 h-4 text-primary-400"></i>
+								</div>
+								<span>Arquitectura escalable sobre Laravel 10.</span>
+							</li>
+						</ul>
+					</section>
 				</div>
-			</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+				<div class="space-y-8">
+					<div class="glass p-8 rounded-3xl">
+						<h3 class="text-xl mb-6">Links del Proyecto</h3>
+						<div class="flex flex-col gap-4">
+							<a href="https://app.adsscreens.com/login" target="_blank"
+								class="btn-primary w-full text-center flex items-center justify-center gap-2">
+								<i data-lucide="external-link" class="w-4 h-4"></i>
+								Visitar Sitio
+							</a>
+							<!-- <a href="#" class="btn-secondary w-full text-center flex items-center justify-center gap-2">
+								<i data-lucide="github" class="w-4 h-4"></i>
+								Código Fuente
+							</a> -->
+						</div>
+					</div>
 
-	</body>
+					<div class="glass p-8 rounded-3xl">
+						<h3 class="text-xl mb-4">Cliente / Entorno</h3>
+						<p class="text-sm text-slate-400">Empresarial / Publicidad Digital</p>
+						<div class="mt-6 pt-6 border-t border-white/5">
+							<p class="text-sm text-slate-400 mb-2 font-semibold">Año</p>
+							<p class="text-white">2023</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+	</main>
+
+	<footer class="py-12 px-6 border-t border-white/5">
+		<div class="max-w-7xl mx-auto flex justify-between items-center">
+			<span class="text-slate-500 text-sm">&copy; 2026 Ely Colmenarez</span>
+			<div class="flex gap-6">
+				<a href="index.html#proyectos" class="text-primary-400 hover:underline text-sm font-medium">Otros
+					Proyectos</a>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		lucide.createIcons();
+	</script>
+</body>
+
 </html>

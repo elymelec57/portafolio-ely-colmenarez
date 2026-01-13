@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Restaurante | Ely Colmenarez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 500: '#0ea5e9', 600: '#0284c7' },
+                        dark: { bg: '#020617', card: '#0f172a' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Outfit', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body { @apply bg-dark-bg text-slate-300 font-sans antialiased; }
+            h1, h2, h3 { @apply font-display text-white font-bold; }
+        }
+        .glass { @apply bg-dark-card/50 backdrop-blur-xl border border-white/10; }
+        .btn-primary { @apply px-6 py-3 bg-primary-600 hover:bg-primary-500 text-white rounded-full font-semibold transition-all duration-300 shadow-lg shadow-primary-600/20 transform hover:-translate-y-1; }
+        .btn-secondary { @apply px-6 py-3 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full font-semibold transition-all duration-300; }
+    </style>
+</head>
+
+<body class="overflow-x-hidden min-h-screen">
+    <header class="fixed top-0 w-full z-50 px-6 py-4">
+        <nav class="max-w-7xl mx-auto glass rounded-2xl px-6 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <i data-lucide="arrow-left"
+                    class="w-5 h-5 text-primary-400 group-hover:-translate-x-1 transition-transform"></i>
+                <span class="font-display font-bold text-white text-lg">Volver al Inicio</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/elymelec57/" target="_blank"
+                    class="p-2 hover:bg-white/5 rounded-lg text-slate-400 hover:text-white transition-colors">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-32 pb-20 px-6">
+        <article class="max-w-4xl mx-auto">
+            <div class="mb-12">
+                <div class="flex flex-wrap gap-3 mb-6">
+                    <span
+                        class="px-4 py-1.5 bg-green-500/10 border border-green-500/20 text-green-400 rounded-full text-xs font-bold uppercase tracking-widest">Next.js</span>
+                    <span
+                        class="px-4 py-1.5 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 rounded-full text-xs font-bold uppercase tracking-widest">Tailwind
+                        CSS</span>
+                    <span
+                        class="px-4 py-1.5 bg-red-500/10 border border-red-500/20 text-red-400 rounded-full text-xs font-bold uppercase tracking-widest">JWT
+                        / Redux</span>
+                    <span
+                        class="px-4 py-1.5 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 rounded-full text-xs font-bold uppercase tracking-widest">Prisma</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl mb-6">Sistema Restaurante</h1>
+                <p class="text-xl text-slate-400 leading-relaxed max-w-2xl">
+                    Plataforma integral para la gestión de pedidos, reservas y control de inventario en tiempo real
+                    para.
+                </p>
+            </div>
+
+            <div class="glass p-4 rounded-[2.5rem] mb-16 overflow-hidden">
+                <img src="images/vercel.png" alt="Restaurante Preview" class="w-full h-auto rounded-[2rem] shadow-2xl">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="md:col-span-2 space-y-8">
+                    <section>
+                        <h2 class="text-2xl mb-4">Sobre la Solución</h2>
+                        <p class="text-slate-400 text-lg leading-relaxed">
+                            Este sistema optimiza la operación diaria de un restaurante. gestión de mesas, seguimiento
+                            de órdenes a cocina y analíticas detalladas para la
+                            gerencia. La finalidad es crear una red de restaurantes donde los clientes puedan reservar
+                            mesas y hacer pedidos en línea.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl mb-4">Características Principales</h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-4">
+                                <div
+                                    class="mt-1 w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
+                                    <i data-lucide="check" class="w-4 h-4 text-primary-400"></i>
+                                </div>
+                                <span>Sistema de reservas con confirmación en tiempo real.</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div
+                                    class="mt-1 w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
+                                    <i data-lucide="check" class="w-4 h-4 text-primary-400"></i>
+                                </div>
+                                <span>Control de inventario con alertas de stock crítico.</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div
+                                    class="mt-1 w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
+                                    <i data-lucide="check" class="w-4 h-4 text-primary-400"></i>
+                                </div>
+                                <span>Panel de administración con Redux para estado global.</span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="glass p-8 rounded-3xl">
+                        <h3 class="text-xl mb-6">Enlaces</h3>
+                        <div class="flex flex-col gap-4">
+                            <a href="#" class="btn-primary w-full text-center flex items-center justify-center gap-2">
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                                Ver Proyecto
+                            </a>
+                            <!-- <a href="https://github.com/elymelec57/" target="_blank"
+                                class="btn-secondary w-full text-center flex items-center justify-center gap-2">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                                Git Profile
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="py-12 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-slate-500 text-sm">
+            <span>&copy; 2026 Ely Colmenarez</span>
+            <a href="index.html#proyectos" class="text-primary-400 hover:underline">Regresar</a>
+        </div>
+    </footer>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

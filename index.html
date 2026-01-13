@@ -1,245 +1,667 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Portafolio Ely Colmenarez</title>
-		<meta name="description" content="full-statck web developer en las siguientes tencologias, javascript, react, Nodejs, Next, Laravel, livewire, vue, inertia.">
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Quién soy</a></li>
-							<li><a href="#one">Mis proyectos</a></li>
-							<li><a href="#two">Por que contratarme</a></li>
-							<li><a href="#three">Contacto</a></li>
-						</ul>
-					</nav>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ely Colmenarez | Senior Full-Stack Developer</title>
+	<meta name="description"
+		content="Senior Full-Stack Web Developer especializado en React, Node.js, Next.js, Laravel y tecnologías modernas.">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700&display=swap"
+		rel="stylesheet">
+
+	<!-- Tailwind CSS -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			darkMode: 'class',
+			theme: {
+				extend: {
+					colors: {
+						primary: {
+							50: '#f0f9ff',
+							100: '#e0f2fe',
+							200: '#bae6fd',
+							300: '#7dd3fc',
+							400: '#38bdf8',
+							500: '#0ea5e9',
+							600: '#0284c7',
+							700: '#0369a1',
+							800: '#075985',
+							900: '#0c4a6e',
+							950: '#082f49',
+						},
+						secondary: {
+							50: '#f5f3ff',
+							100: '#ede9fe',
+							200: '#ddd6fe',
+							300: '#c4b5fd',
+							400: '#a78bfa',
+							500: '#8b5cf6',
+							600: '#7c3aed',
+							700: '#6d28d9',
+							800: '#5b21b6',
+							900: '#4c1d95',
+							950: '#2e1065',
+						},
+						dark: {
+							bg: '#020617',
+							card: '#0f172a',
+							border: '#1e293b'
+						}
+					},
+					fontFamily: {
+						sans: ['Inter', 'sans-serif'],
+						display: ['Outfit', 'sans-serif'],
+					},
+					animation: {
+						'gradient': 'gradient 8s linear infinite',
+						'float': 'float 6s ease-in-out infinite',
+					},
+					keyframes: {
+						gradient: {
+							'0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
+							'50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
+						},
+						float: {
+							'0%, 100%': { transform: 'translateY(0)' },
+							'50%': { transform: 'translateY(-20px)' },
+						}
+					}
+				}
+			}
+		}
+	</script>
+
+	<!-- Lucide Icons -->
+	<script src="https://unpkg.com/lucide@latest"></script>
+
+	<style type="text/tailwindcss">
+		@layer base {
+            body {
+                @apply bg-dark-bg text-slate-300 font-sans antialiased;
+            }
+            h1, h2, h3, h4 {
+                @apply font-display text-white font-bold;
+            }
+        }
+        @layer components {
+            .glass {
+                @apply bg-dark-card/50 backdrop-blur-xl border border-white/10;
+            }
+            .glass-hover {
+                @apply hover:bg-dark-card/80 hover:border-primary-500/50 transition-all duration-300;
+            }
+            .btn-primary {
+                @apply px-6 py-3 bg-primary-600 hover:bg-primary-500 text-white rounded-full font-semibold transition-all duration-300 shadow-lg shadow-primary-600/20 hover:shadow-primary-600/40 transform hover:-translate-y-1 active:scale-95;
+            }
+            .btn-secondary {
+                @apply px-6 py-3 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full font-semibold transition-all duration-300 backdrop-blur-sm transform hover:-translate-y-1 active:scale-95;
+            }
+            .nav-link {
+                @apply text-slate-400 hover:text-white transition-colors duration-200 text-sm font-medium;
+            }
+            .section-title {
+                @apply text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-500;
+            }
+            .card-gradient {
+                @apply relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-primary-500/10 before:to-secondary-500/10 before:opacity-0 hover:before:opacity-100 transition-opacity duration-500;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            @apply bg-dark-bg;
+        }
+        ::-webkit-scrollbar-thumb {
+            @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+        }
+
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(180deg, rgba(14, 165, 233, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+	<!-- Background Decor -->
+	<div class="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
+		<div class="blob -top-24 -left-24 animate-float"></div>
+		<div class="blob top-1/2 -right-24 animate-float" style="animation-delay: -3s;"></div>
+		<div
+			class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay">
+		</div>
+	</div>
+
+	<!-- Header / Nav -->
+	<header class="fixed top-0 w-full z-50 px-6 py-4">
+		<nav class="max-w-7xl mx-auto glass rounded-2xl px-6 py-3 flex items-center justify-between">
+			<div class="flex items-center gap-2">
+				<div
+					class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-600 rounded-lg flex items-center justify-center font-display font-bold text-white text-xl">
+					E
 				</div>
-			</section>
-
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Hola, soy Ely colmenarez Full-stack web developer.</h1>
-							<p>Me dedico a desarrollar tecnologías web con html, css, bootstrap 5, tailwindcss, javascript, React, SQL y laravel 12.<br />
-							La innovación tecnologíca es mi pasión, te invito a ir a mi <a href="https://github.com/elymelec57/">Github</a>.</p>
-							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Ver más</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="adsscreens.html" class="image"><img src="images/ads1.webp" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Sistema Adsscreens</h2>
-									<p>Sistema de pantallas publicitarias para negocios.</p>
-									<ul class="actions">
-										<li><a href="adsscreens.html" class="button">Ver más</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="empleados.html" class="image"><img src="images/login.png" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>AgentLink (sistema para agendar citas)</h2>
-									<!-- <p>Pequeño crud de empleados, usando Api.</p> -->
-									<ul class="actions">
-										<li><a href="agenlink.html" class="button">Ver más</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="calculadora.html" class="image"><img src="images/riesgocero.webp" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Calculadora Riesgo Cero</h2>
-									<p>Esta página web calcula el monto sobre una cantidad de dinero dependiendo del precio del dólar y la taza de cambio, el monto cambia dependiendo del país.</p>
-									<ul class="actions">
-										<li><a href="calculadora.html" class="button">Ver más</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<!-- <section>
-							<a href="agricola.html" class="image"><img src="images/5.webp" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Sistema web agricola</h2>
-									<p>Este sistema fue creado para llevar el registro agrícola de una nación, tener el registro de productores, haciendas y producciones, para lograr una mejor visibilidad de los productos.</p>
-									<ul class="actions">
-										<li><a href="agricola.html" class="button">ver más</a></li>
-									</ul>
-								</div>
-							</div>
-						</section> -->
-						<section>
-							<a href="empleados.html" class="image"><img src="images/react1.png" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Crud Empleados (React)</h2>
-									<p>Pequeño crud de empleados, usando Api.</p>
-									<ul class="actions">
-										<li><a href="empleados.html" class="button">Ver más</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
-
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>¿Por que contratarme?</h2>
-							<p>Soy estudiante del 4to año de Ingeneria en Informática de la Universidad Politécnica Territorial Andrés Eloy blanco con el titulo de técnico superior en informática, con habilidades en la área de programación web frontend y backend que me permite dar solución a una problemática que se presente en un sistema informático.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Curso Realizados</h3>
-									<ul>
-										<li>Introducción al Desarollo web I (40h) llevado acabo el 28/05/2020</li>
-										<li>Introducción al Desarollo web II (40h) llevado acabo el 11/06/2020</li>
-									</ul>
-									
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Habilidades</h3>
-									<ul>
-										<li>Manejo y dominio de sistemas operativo linux y windows.</li>
-										<li>Manejo y dominio de Microsoft Office, LibreOffice, internet, correo electrónico y redes sociales.</li>
-										<li>manejo y dominio de software de diseño gráfico (Krita).</li>
-									</ul>
-								</section>
-								
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>Destrezas</h3>
-									<ul>
-										<li>Liderazgo y trabajo en equipo.</li>
-										<li>Responsabilidad y Persistencia.</li>
-										
-									</ul>
-								</section>
-
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Tecnologías</h3>
-									<div class="row">
-										<p>
-											<img src="images/img/laravel.webp" alt="Laravel" width="50" height="50">
-										</p>
-										<p>
-											<img src="images/img/livewire.webp" alt="livewire" width="50" height="50">
-										</p>
-										<p>
-											<img src="images/img/alpinejs.svg" alt="alpinejs" width="50" height="50">
-										</p>
-										<p>
-											<img src="images/img/node.webp" alt="NodeJs" width="50" height="50">
-										</p>
-										<p>
-											<img src="images/img/react.webp" alt="React, Nextjs" width="50" height="50">
-										</p>
-										<p>
-											<img src="images/img/sequelize.webp" alt="ORM sequelize" width="50" height="50">
-										</p>
-										<p>
-											<img src="images/img/inertia.jpeg" alt="Inertia" width="50" height="50">
-										</p>
-										<p>
-											<img src="images/img/vue.png" alt="Vue" width="50" height="50">
-										</p>
-									</div>
-								</section>
-							</div>
-							
-						</div>
-					</section>
-
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Contacto</h2>
-							
-							<div class="split style1">
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Dirección</h3>
-											<!-- <span>Calle 14 entre 3 y 4 de pueblo nuevo.<br /> -->
-												Barquisimeto-Edo Lara.
-											</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">elycolmenarez084@gmail.com</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<p>
-												<img src="images/img/phone.png" alt="" width="250" height="50">
-											</p>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<!-- <li><a href="https://www.facebook.com/profile.php?id=100010883835406" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-												<li><a href="https://github.com/elymelec57/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<!-- <li><a href="https://www.instagram.com/elymelec57/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
-
+				<span class="font-display font-bold text-white text-xl hidden sm:block">Ely Colmenarez</span>
 			</div>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Derechos reservados.</li>
-					</ul>
+			<ul class="hidden md:flex items-center gap-8">
+				<li><a href="#inicio" class="nav-link">Inicio</a></li>
+				<li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+				<li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+				<li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+				<li><a href="#contacto" class="nav-link">Contacto</a></li>
+			</ul>
+
+			<div class="flex items-center gap-4">
+				<a href="https://github.com/elymelec57/" target="_blank"
+					class="p-2 glass-hover rounded-lg text-slate-400 hover:text-white transition-colors">
+					<i data-lucide="github" class="w-5 h-5"></i>
+				</a>
+				<a href="#contacto" class="btn-primary py-2 px-4 text-sm">Contratar</a>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<!-- Hero Section -->
+		<section id="inicio" class="min-h-screen flex items-center pt-20 px-6">
+			<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+				<div class="space-y-8">
+					<div
+						class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-sm font-medium">
+						<span class="relative flex h-2 w-2">
+							<span
+								class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+							<span class="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+						</span>
+						Disponible para nuevos proyectos
+					</div>
+
+					<h1 class="text-6xl md:text-8xl font-black leading-tight">
+						Full-Stack <br>
+						<span
+							class="bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-secondary-500 to-primary-500 animate-gradient">
+							Developer
+						</span>
+					</h1>
+
+					<p class="text-xl text-slate-400 max-w-xl leading-relaxed">
+						Me dedico a transformar ideas complejas en realidades digitales excepcionales.
+						Especialista en arquitecturas escalables con <span
+							class="text-white font-medium">Laravel</span>,
+						<span class="text-white font-medium">Vue.js</span> y <span
+							class="text-white font-medium">Next.js</span>.
+					</p>
+
+					<div class="flex flex-wrap gap-4">
+						<a href="#proyectos" class="btn-primary flex items-center gap-2">
+							Explorar Proyectos
+							<i data-lucide="arrow-right" class="w-5 h-5"></i>
+						</a>
+						<a href="https://github.com/elymelec57/" target="_blank"
+							class="btn-secondary flex items-center gap-2">
+							Github Profile
+						</a>
+					</div>
+
+					<div class="flex items-center gap-8 pt-4 border-t border-white/5">
+						<div class="text-center">
+							<div class="text-3xl font-bold text-white">4+</div>
+							<div class="text-xs text-slate-500 uppercase tracking-widest">Años de Exp.</div>
+						</div>
+						<!-- <div class="text-center">
+							<div class="text-3xl font-bold text-white">20+</div>
+							<div class="text-xs text-slate-500 uppercase tracking-widest">Proyectos Finalizados</div>
+						</div>
+						<div class="text-center">
+							<div class="text-3xl font-bold text-white">99%</div>
+							<div class="text-xs text-slate-500 uppercase tracking-widest">Satisfacción</div>
+						</div> -->
+					</div>
 				</div>
-			</footer>
 
-		<!-- Scripts -->
-		<!-- Inputss Pixel Code -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.26/dist/sweetalert2.all.min.js"></script>
-		<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.26/dist/sweetalert2.min.css" rel="stylesheet">
-		<!-- End Inputss Pixel Code -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+				<div class="relative hidden lg:block">
+					<div
+						class="relative z-10 glass rounded-3xl p-4 overflow-hidden transform rotate-3 hover:rotate-0 transition-transform duration-500 shadow-2xl">
+						<img src="images/ads1.webp" alt="Ely Colmenarez Work"
+							class="rounded-2xl w-full h-[500px] object-cover">
+						<div class="absolute inset-0 bg-gradient-to-t from-dark-bg/80 to-transparent"></div>
+						<div class="absolute bottom-10 left-10 right-10">
+							<h3 class="text-2xl mb-2 italic underline underline-offset-8 decoration-primary-500">
+								Adsscreens System</h3>
+							<p class="text-sm text-slate-300">Software publicitario de alto rendimiento escalado para
+								entornos empresariales.</p>
+						</div>
+					</div>
+					<!-- Decorative back elements -->
+					<div class="absolute inset-0 -z-10 bg-secondary-500/20 rounded-3xl blur-3xl transform -rotate-6">
+					</div>
+				</div>
+			</div>
+		</section>
 
-	</body>
+		<!-- Projects Section -->
+		<section id="proyectos" class="py-32 px-6">
+			<div class="max-w-7xl mx-auto">
+				<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+					<div>
+						<h2 class="section-title">Proyectos Destacados</h2>
+						<p class="text-slate-400 max-w-2xl text-lg">
+							Una selección de mis trabajos más impactantes, combinando diseño centrado en el usuario con
+							ingeniería de software robusta.
+						</p>
+					</div>
+					<a href="https://github.com/elymelec57/"
+						class="text-primary-400 hover:text-primary-300 font-semibold flex items-center gap-2 mb-2 group">
+						Ver todos en Github
+						<i data-lucide="external-link"
+							class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+					</a>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<!-- Project Card 1 -->
+					<div class="group relative glass rounded-[2rem] overflow-hidden glass-hover">
+						<div class="relative h-64 overflow-hidden">
+							<img src="images/ads1.webp" alt="Adsscreens"
+								class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+							<div class="absolute inset-0 bg-gradient-to-t from-dark-bg to-transparent opacity-60"></div>
+							<div class="absolute top-4 right-4 flex gap-2">
+								<span
+									class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/10">Laravel
+									10</span>
+								<span
+									class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/10">Livewire</span>
+							</div>
+						</div>
+						<div class="p-8">
+							<h3 class="text-2xl mb-3">Sistema Adsscreens</h3>
+							<p class="text-slate-400 mb-6 line-clamp-2">Plataforma de visualización publicitaria para
+								negocios con gestión de contenidos multimedia en tiempo real.</p>
+							<a href="adsscreens.html"
+								class="inline-flex items-center gap-2 text-white font-semibold group/btn">
+								Detalles del caso
+								<i data-lucide="arrow-right"
+									class="w-4 h-4 group-hover/btn:translate-x-2 transition-transform"></i>
+							</a>
+						</div>
+					</div>
+
+					<!-- Project Card 2 -->
+					<div class="group relative glass rounded-[2rem] overflow-hidden glass-hover">
+						<div class="relative h-64 overflow-hidden">
+							<img src="images/login.png" alt="AgentLink"
+								class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+							<div class="absolute inset-0 bg-gradient-to-t from-dark-bg to-transparent opacity-60"></div>
+							<div class="absolute top-4 right-4 flex gap-2">
+								<span
+									class="px-3 py-1 bg-black/20 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/10">Laravel</span>
+								<span
+									class="px-3 py-1 bg-black/20 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/10">Livewire</span>
+								<span
+									class="px-3 py-1 bg-black/20 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/10">Alpine</span>
+								<span
+									class="px-3 py-1 bg-black/20 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/10">Tailwind</span>
+								<span
+									class="px-3 py-1 bg-black/20 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/10">MySQL</span>
+							</div>
+						</div>
+						<div class="p-8">
+							<h3 class="text-2xl mb-3">AgentLink</h3>
+							<p class="text-slate-400 mb-6 line-clamp-2">Sistema avanzado para la gestión y programación
+								de citas médicas y corporativas.</p>
+							<a href="agenlink.html"
+								class="inline-flex items-center gap-2 text-white font-semibold group/btn">
+								Detalles del caso
+								<i data-lucide="arrow-right"
+									class="w-4 h-4 group-hover/btn:translate-x-2 transition-transform"></i>
+							</a>
+						</div>
+					</div>
+
+					<!-- Project Card 3 -->
+					<div class="group relative glass rounded-[2rem] overflow-hidden glass-hover">
+						<div class="relative h-64 overflow-hidden">
+							<img src="images/vercel.png" alt="Calculadora"
+								class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+							<div class="absolute inset-0 bg-gradient-to-t from-dark-bg to-transparent opacity-60"></div>
+							<div class="absolute top-4 right-4 flex gap-2">
+								<span
+									class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/10">Next.js</span>
+								<span
+									class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/10">Tailwind</span>
+								<span
+									class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/10">JWT</span>
+								<span
+									class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/10">Redux</span>
+								<span
+									class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/10">Vercel</span>
+							</div>
+						</div>
+						<div class="p-8">
+							<h3 class="text-2xl mb-3">Sistema Restaurante</h3>
+							<p class="text-slate-400 mb-6 line-clamp-2">Sistema de gestión para restaurantes con
+								capacidad
+								de reservas y control de inventario.</p>
+							<a href="restaurante.html"
+								class="inline-flex items-center gap-2 text-white font-semibold group/btn">
+								Detalles del caso
+								<i data-lucide="arrow-right"
+									class="w-4 h-4 group-hover/btn:translate-x-2 transition-transform"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Skills Section -->
+		<section id="habilidades" class="py-32 relative overflow-hidden">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="text-center mb-20">
+					<h2 class="section-title">Tech Stack</h2>
+					<p class="text-slate-400 max-w-2xl mx-auto text-lg">
+						Dominio avanzdo en las tecnologías más demandadas del ecosistema moderno de desarrollo.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+					<!-- Skill Item -->
+					<div
+						class="glass p-6 rounded-2xl flex flex-col items-center gap-4 group hover:scale-105 transition-all duration-300 border-white/5 hover:border-primary-500/50">
+						<img src="images/img/laravel.webp" alt="Laravel"
+							class="w-12 h-12 grayscale group-hover:grayscale-0 transition-all">
+						<span class="font-medium">Laravel</span>
+					</div>
+					<div
+						class="glass p-6 rounded-2xl flex flex-col items-center gap-4 group hover:scale-105 transition-all duration-300 border-white/5 hover:border-secondary-500/50">
+						<img src="images/img/react.webp" alt="React"
+							class="w-12 h-12 grayscale group-hover:grayscale-0 transition-all">
+						<span class="font-medium">React / Next.js</span>
+					</div>
+					<div
+						class="glass p-6 rounded-2xl flex flex-col items-center gap-4 group hover:scale-105 transition-all duration-300 border-white/5 hover:border-green-500/50">
+						<img src="images/img/node.webp" alt="NodeJS"
+							class="w-12 h-12 grayscale group-hover:grayscale-0 transition-all">
+						<span class="font-medium">Node.js</span>
+					</div>
+					<div
+						class="glass p-6 rounded-2xl flex flex-col items-center gap-4 group hover:scale-105 transition-all duration-300 border-white/5 hover:border-blue-500/50">
+						<img src="images/img/vue.png" alt="Vue"
+							class="w-12 h-12 grayscale group-hover:grayscale-0 transition-all">
+						<span class="font-medium">Vue / Inertia</span>
+					</div>
+					<div
+						class="glass p-6 rounded-2xl flex flex-col items-center gap-4 group hover:scale-105 transition-all duration-300 border-white/5 hover:border-cyan-500/50">
+						<img src="images/img/alpinejs.svg" alt="Alpine"
+							class="w-12 h-12 grayscale group-hover:grayscale-0 transition-all">
+						<span class="font-medium">Alpine.js</span>
+					</div>
+					<div
+						class="glass p-6 rounded-2xl flex flex-col items-center gap-4 group hover:scale-105 transition-all duration-300 border-white/5 hover:border-orange-500/50">
+						<img src="images/img/livewire.webp" alt="Livewire"
+							class="w-12 h-12 grayscale group-hover:grayscale-0 transition-all">
+						<span class="font-medium">Livewire</span>
+					</div>
+					<div
+						class="glass p-6 rounded-2xl flex flex-col items-center gap-4 group hover:scale-105 transition-all duration-300 border-white/5 hover:border-indigo-500/50">
+						<img src="images/img/sequelize.webp" alt="Sequelize"
+							class="w-12 h-12 grayscale group-hover:grayscale-0 transition-all">
+						<span class="font-medium">ORM / SQL</span>
+					</div>
+					<div
+						class="glass p-6 rounded-2xl flex flex-col items-center gap-4 group hover:scale-105 transition-all duration-300 border-white/5 hover:border-purple-500/50">
+						<img src="images/img/inertia.jpeg" alt="Inertia"
+							class="w-12 h-12 rounded-lg grayscale group-hover:grayscale-0 transition-all">
+						<span class="font-medium">Inertia.js</span>
+					</div>
+					<!-- New Skills -->
+					<div
+						class="glass p-6 rounded-2xl flex flex-col items-center gap-4 group hover:scale-105 transition-all duration-300 border-white/5 hover:border-indigo-500/50">
+						<img src="https://cdn.worldvectorlogo.com/logos/prisma-2.svg" alt="Prisma"
+							class="w-12 h-12 grayscale group-hover:grayscale-0 transition-all">
+						<span class="font-medium">Prisma ORM</span>
+					</div>
+					<div
+						class="glass p-6 rounded-2xl flex flex-col items-center gap-4 group hover:scale-105 transition-all duration-300 border-white/5 hover:border-orange-600/50">
+						<img src="https://cdn.worldvectorlogo.com/logos/html-1.svg" alt="HTML5"
+							class="w-12 h-12 grayscale group-hover:grayscale-0 transition-all">
+						<span class="font-medium">HTML5</span>
+					</div>
+					<div class="glass p-6 rounded-2xl flex flex-col items-center gap-4 group hover:scale-105 transition-all duration-300 border-white/5 hover:border-rose-500/50"
+						title="Conocimiento en automación básica con n8n">
+						<img src="https://osuite-backend-files.s3.amazonaws.com/media/n8n-color.png" alt="n8n"
+							class="w-12 h-12 grayscale group-hover:grayscale-0 transition-all">
+						<span class="font-medium">n8n / Automation</span>
+					</div>
+					<div
+						class="glass p-6 rounded-2xl flex flex-col items-center gap-4 group hover:scale-105 transition-all duration-300 border-white/5 hover:border-cyan-400/50">
+						<img src="https://cdn.worldvectorlogo.com/logos/tailwind-css-2.svg" alt="Tailwind CSS"
+							class="w-12 h-12 grayscale group-hover:grayscale-0 transition-all">
+						<span class="font-medium">Tailwind CSS</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- About Me / Experience Section -->
+		<section id="sobre-mi" class="py-32 px-6">
+			<div class="max-w-7xl mx-auto">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+					<div>
+						<h2 class="section-title">Trayectoria & Educación</h2>
+						<div class="space-y-12">
+							<!-- Education Item -->
+							<div class="relative pl-8 border-l-2 border-primary-500/30">
+								<div
+									class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary-500 shadow-[0_0_15px_rgba(14,165,233,0.5)]">
+								</div>
+								<span
+									class="text-primary-400 font-bold text-sm tracking-widest uppercase mb-2 block">2022
+									- Presente</span>
+								<h3 class="text-2xl mb-2">Ingeniería en Informática (4to Año)</h3>
+								<p class="text-slate-400">Universidad Politécnica Territorial Andrés Eloy Blanco
+									(UPTAEB). Enfocado en algoritmos avanzados, gestión de proyectos y arquitectura de
+									software.</p>
+							</div>
+
+							<!-- Education Item -->
+							<div class="relative pl-8 border-l-2 border-secondary-500/30 text-slate-400">
+								<div
+									class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-secondary-500 shadow-[0_0_15px_rgba(139,92,246,0.5)]">
+								</div>
+								<span
+									class="text-secondary-400 font-bold text-sm tracking-widest uppercase mb-2 block">2022</span>
+								<h3 class="text-2xl mb-2 text-white">Técnico Superior en Informática</h3>
+								<p>Título obtenido con honores, destacando en desarrollo lógico y administración de
+									bases de datos.</p>
+							</div>
+
+							<!-- Certification Item -->
+							<div class="relative pl-8 border-l-2 border-green-500/30 text-slate-400">
+								<div
+									class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.5)]">
+								</div>
+								<span
+									class="text-green-400 font-bold text-sm tracking-widest uppercase mb-2 block">Certificaciones</span>
+								<h3 class="text-2xl mb-2 text-white">Desarrollo Web Full-Stack</h3>
+								<p>Introducción al Desarrollo Web I y II (80h+) - Especialización en tecnologías
+									modernas de frontend y backend.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="space-y-8">
+						<div class="glass p-10 rounded-[2.5rem] relative overflow-hidden group">
+							<div
+								class="absolute top-0 right-0 p-8 text-primary-500/10 group-hover:text-primary-500/20 transition-colors">
+								<i data-lucide="code-2" class="w-32 h-32"></i>
+							</div>
+							<h3 class="text-3xl mb-6">Filosofía de Desarrollo</h3>
+							<p class="text-slate-400 text-lg leading-relaxed mb-6">
+								Mi enfoque se basa en la <span class="text-white">simplicidad funcional</span>. Creo
+								firmemente que un buen software no solo debe funcionar perfectamente, sino ser
+								mantenible, escalable y proporcionar una experiencia de usuario excepcional.
+							</p>
+							<ul class="grid grid-cols-2 gap-4">
+								<li class="flex items-center gap-2 text-sm">
+									<i data-lucide="check-circle-2" class="w-4 h-4 text-primary-400"></i>
+									Clean Code
+								</li>
+								<li class="flex items-center gap-2 text-sm">
+									<i data-lucide="check-circle-2" class="w-4 h-4 text-primary-400"></i>
+									Performance First
+								</li>
+								<li class="flex items-center gap-2 text-sm">
+									<i data-lucide="check-circle-2" class="w-4 h-4 text-primary-400"></i>
+									Responsive Design
+								</li>
+								<li class="flex items-center gap-2 text-sm">
+									<i data-lucide="check-circle-2" class="w-4 h-4 text-primary-400"></i>
+									Agile Mindset
+								</li>
+							</ul>
+						</div>
+
+						<div class="grid grid-cols-2 gap-6">
+							<div class="glass p-6 rounded-3xl text-center">
+								<div class="text-primary-400 mb-2 flex justify-center"><i data-lucide="coffee"></i>
+								</div>
+								<div class="text-2xl font-bold text-white uppercase tracking-tighter">Infinita</div>
+								<div class="text-xs text-slate-500 uppercase">Pasión por el código</div>
+							</div>
+							<div class="glass p-6 rounded-3xl text-center">
+								<div class="text-secondary-400 mb-2 flex justify-center"><i data-lucide="rocket"></i>
+								</div>
+								<div class="text-2xl font-bold text-white uppercase tracking-tighter">Rápido</div>
+								<div class="text-xs text-slate-500 uppercase">Tiempo de entrega</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section id="contacto" class="py-32 px-6 relative">
+			<div class="max-w-3xl mx-auto glass p-12 md:p-16 rounded-[3rem] text-center relative z-10">
+				<h2 class="section-title">Hablemos de tu proyecto</h2>
+				<p class="text-slate-400 text-lg mb-12">
+					¿Tienes una idea innovadora o necesitas escalar tu plataforma tecnológica? Estoy listo para ayudarte
+					a dar el siguiente paso.
+				</p>
+
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+					<a href="mailto:elycolmenarez084@gmail.com"
+						class="glass p-6 rounded-2xl flex items-center gap-4 hover:border-primary-500/50 transition-colors">
+						<div
+							class="w-12 h-12 rounded-xl bg-primary-500/10 flex items-center justify-center text-primary-400">
+							<i data-lucide="mail"></i>
+						</div>
+						<div class="text-left flex-1">
+							<div class="text-sm text-slate-500">Email</div>
+							<div class="font-medium text-white break-all text-xs sm:text-sm lg:text-base">
+								elycolmenarez084@gmail.com
+							</div>
+						</div>
+					</a>
+					<div class="glass p-6 rounded-2xl flex items-center gap-4">
+						<div
+							class="w-12 h-12 rounded-xl bg-secondary-500/10 flex items-center justify-center text-secondary-400">
+							<i data-lucide="map-pin"></i>
+						</div>
+						<div class="text-left">
+							<div class="text-sm text-slate-500">Ubicación</div>
+							<div class="font-medium text-white">Barquisimeto, Venezuela</div>
+						</div>
+					</div>
+					<div class="glass p-6 rounded-2xl flex items-center gap-4">
+						<div
+							class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400">
+							<i data-lucide="smartphone"></i>
+						</div>
+						<div class="text-left">
+							<div class="text-sm text-slate-500">Celular</div>
+							<img src="images/img/phone.png" alt="Phone"
+								class="h-6 object-contain invert grayscale brightness-200">
+						</div>
+					</div>
+				</div>
+
+				<div class="flex flex-wrap justify-center gap-6">
+					<a href="https://github.com/elymelec57/" target="_blank"
+						class="btn-primary flex items-center gap-2">
+						<i data-lucide="github" class="w-5 h-5"></i>
+						Seguir en Github
+					</a>
+					<!-- <a href="#" class="btn-secondary">Descargar CV</a> -->
+				</div>
+			</div>
+
+			<!-- Background element -->
+			<div
+				class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-primary-500/5 blur-[120px] rounded-full -z-10">
+			</div>
+		</section>
+	</main>
+
+	<footer class="py-12 px-6 border-t border-white/5">
+		<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+			<div class="flex items-center gap-2 text-white/50 text-sm">
+				<span>&copy; 2026 Ely Colmenarez.</span>
+				<span class="hidden md:inline">Todos los derechos reservados.</span>
+			</div>
+
+			<div class="flex items-center gap-6">
+				<!-- <a href="#" class="text-slate-500 hover:text-white transition-colors text-sm">Twitter</a> -->
+				<a href="https://github.com/elymelec57/"
+					class="text-slate-500 hover:text-white transition-colors text-sm">Github</a>
+				<a href="https://www.linkedin.com/in/ely-colmenarez-0193761ab?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="text-slate-500 hover:text-white transition-colors text-sm">LinkedIn</a>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		// Initialize Lucide icons
+		lucide.createIcons();
+
+		// Navbar effect on scroll
+		window.addEventListener('scroll', () => {
+			const header = document.querySelector('header');
+			if (window.scrollY > 50) {
+				header.classList.add('py-2');
+				header.querySelector('nav').classList.add('bg-dark-card/80');
+			} else {
+				header.classList.remove('py-2');
+				header.querySelector('nav').classList.remove('bg-dark-card/80');
+			}
+		});
+
+		// Smooth scroll for nav links
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
+				document.querySelector(this.getAttribute('href')).scrollIntoView({
+					behavior: 'smooth'
+				});
+			});
+		});
+	</script>
+</body>
+
 </html>
