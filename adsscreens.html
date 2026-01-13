@@ -4,12 +4,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Calculadora Riesgo Cero | Ely Colmenarez</title>
+	<title>Sistema Adsscreens | Ely Colmenarez</title>
+
+	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
 		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700&display=swap"
 		rel="stylesheet">
+
+	<!-- Tailwind CSS -->
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script>
 		tailwind.config = {
@@ -19,12 +23,16 @@
 						primary: { 500: '#0ea5e9', 600: '#0284c7' },
 						dark: { bg: '#020617', card: '#0f172a' }
 					},
-					fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Outfit', 'sans-serif'] }
+					fontFamily: {
+						sans: ['Inter', 'sans-serif'],
+						display: ['Outfit', 'sans-serif'],
+					}
 				}
 			}
 		}
 	</script>
 	<script src="https://unpkg.com/lucide@latest"></script>
+
 	<style type="text/tailwindcss">
 		@layer base {
             body { @apply bg-dark-bg text-slate-300 font-sans antialiased; }
@@ -37,6 +45,7 @@
 </head>
 
 <body class="overflow-x-hidden min-h-screen">
+	<!-- Header -->
 	<header class="fixed top-0 w-full z-50 px-6 py-4">
 		<nav class="max-w-7xl mx-auto glass rounded-2xl px-6 py-3 flex items-center justify-between">
 			<a href="index.html" class="flex items-center gap-2 group">
@@ -44,6 +53,7 @@
 					class="w-5 h-5 text-primary-400 group-hover:-translate-x-1 transition-transform"></i>
 				<span class="font-display font-bold text-white text-lg">Volver al Inicio</span>
 			</a>
+
 			<div class="flex items-center gap-4">
 				<a href="https://github.com/elymelec57/" target="_blank"
 					class="p-2 hover:bg-white/5 rounded-lg text-slate-400 hover:text-white transition-colors">
@@ -58,59 +68,58 @@
 			<div class="mb-12">
 				<div class="flex flex-wrap gap-3 mb-6">
 					<span
-						class="px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-xs font-bold uppercase tracking-widest">React</span>
+						class="px-4 py-1.5 bg-primary-500/10 border border-primary-500/20 text-primary-400 rounded-full text-xs font-bold uppercase tracking-widest">Laravel
+						10</span>
 					<span
-						class="px-4 py-1.5 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 rounded-full text-xs font-bold uppercase tracking-widest">Tailwind
-						CSS</span>
+						class="px-4 py-1.5 bg-secondary-500/10 border border-secondary-500/20 text-secondary-400 rounded-full text-xs font-bold uppercase tracking-widest">Livewire</span>
 					<span
-						class="px-4 py-1.5 bg-orange-500/10 border border-orange-500/20 text-orange-400 rounded-full text-xs font-bold uppercase tracking-widest">HTML5</span>
+						class="px-4 py-1.5 bg-green-500/10 border border-green-500/20 text-green-400 rounded-full text-xs font-bold uppercase tracking-widest">Alpine.js</span>
 				</div>
-				<h1 class="text-5xl md:text-6xl mb-6">Calculadora Riesgo Cero</h1>
+				<h1 class="text-5xl md:text-6xl mb-6">Sistema Adsscreens</h1>
 				<p class="text-xl text-slate-400 leading-relaxed max-w-2xl">
-					Herramienta financiera de precisión para el cálculo de conversión de divisas, integrando tasas de
-					cambio dinámicas por país.
+					Plataforma integral para la gestión y despliegue de contenido publicitario en pantallas digitales
+					para entornos comerciales.
 				</p>
 			</div>
 
 			<div class="glass p-4 rounded-[2.5rem] mb-16 overflow-hidden">
-				<img src="images/riesgocero.webp" alt="Calculadora Preview"
-					class="w-full h-auto rounded-[2rem] shadow-2xl">
+				<img src="images/ads1.webp" alt="Adsscreens Preview" class="w-full h-auto rounded-[2rem] shadow-2xl">
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
 				<div class="md:col-span-2 space-y-8">
 					<section>
-						<h2 class="text-2xl mb-4">Propósito del Sistema</h2>
+						<h2 class="text-2xl mb-4">Descripción del Proyecto</h2>
 						<p class="text-slate-400 text-lg leading-relaxed">
-							Esta aplicación web permite a los usuarios calcular montos exactos en diferentes divisas
-							basándose en el precio del dólar actual y las tasas de cambio regionales. Es una herramienta
-							esencial para el sector financiero y el comercio internacional.
+							Este sistema está diseñado para transformar cualquier pantalla en un potente canal
+							publicitario. Permite a los negocios gestionar carruseles de imágenes, videos y anuncios
+							interactivos desde un panel centralizado.
 						</p>
 					</section>
 
 					<section>
-						<h2 class="text-2xl mb-4">Highlights Técnicos</h2>
+						<h2 class="text-2xl mb-4">Características Clave</h2>
 						<ul class="space-y-4">
 							<li class="flex items-start gap-4">
 								<div
 									class="mt-1 w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
 									<i data-lucide="check" class="w-4 h-4 text-primary-400"></i>
 								</div>
-								<span>React para una interfaz de usuario reactiva y rápida.</span>
+								<span>Gestión de contenido dinámico en tiempo real.</span>
 							</li>
 							<li class="flex items-start gap-4">
 								<div
 									class="mt-1 w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
 									<i data-lucide="check" class="w-4 h-4 text-primary-400"></i>
 								</div>
-								<span>Lógica de cálculo desacoplada para fácil mantenimiento.</span>
+								<span>Programación horaria para campañas automáticas.</span>
 							</li>
 							<li class="flex items-start gap-4">
 								<div
 									class="mt-1 w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
 									<i data-lucide="check" class="w-4 h-4 text-primary-400"></i>
 								</div>
-								<span>Diseño atómico utilizando Tailwind CSS.</span>
+								<span>Arquitectura escalable sobre Laravel 10.</span>
 							</li>
 						</ul>
 					</section>
@@ -118,17 +127,26 @@
 
 				<div class="space-y-8">
 					<div class="glass p-8 rounded-3xl">
-						<h3 class="text-xl mb-6">Enlaces</h3>
+						<h3 class="text-xl mb-6">Links del Proyecto</h3>
 						<div class="flex flex-col gap-4">
-							<a href="#" class="btn-primary w-full text-center flex items-center justify-center gap-2">
+							<a href="https://app.adsscreens.com/login" target="_blank"
+								class="btn-primary w-full text-center flex items-center justify-center gap-2">
 								<i data-lucide="external-link" class="w-4 h-4"></i>
-								Ver Proyecto
+								Visitar Sitio
 							</a>
-							<a href="https://github.com/elymelec57/" target="_blank"
-								class="btn-secondary w-full text-center flex items-center justify-center gap-2">
+							<!-- <a href="#" class="btn-secondary w-full text-center flex items-center justify-center gap-2">
 								<i data-lucide="github" class="w-4 h-4"></i>
-								Git Profile
-							</a>
+								Código Fuente
+							</a> -->
+						</div>
+					</div>
+
+					<div class="glass p-8 rounded-3xl">
+						<h3 class="text-xl mb-4">Cliente / Entorno</h3>
+						<p class="text-sm text-slate-400">Empresarial / Publicidad Digital</p>
+						<div class="mt-6 pt-6 border-t border-white/5">
+							<p class="text-sm text-slate-400 mb-2 font-semibold">Año</p>
+							<p class="text-white">2023</p>
 						</div>
 					</div>
 				</div>
@@ -137,12 +155,18 @@
 	</main>
 
 	<footer class="py-12 px-6 border-t border-white/5">
-		<div class="max-w-7xl mx-auto flex justify-between items-center text-slate-500 text-sm">
-			<span>&copy; 2026 Ely Colmenarez</span>
-			<a href="index.html#proyectos" class="text-primary-400 hover:underline">Regresar</a>
+		<div class="max-w-7xl mx-auto flex justify-between items-center">
+			<span class="text-slate-500 text-sm">&copy; 2026 Ely Colmenarez</span>
+			<div class="flex gap-6">
+				<a href="index.html#proyectos" class="text-primary-400 hover:underline text-sm font-medium">Otros
+					Proyectos</a>
+			</div>
 		</div>
 	</footer>
-	<script>lucide.createIcons();</script>
+
+	<script>
+		lucide.createIcons();
+	</script>
 </body>
 
 </html>

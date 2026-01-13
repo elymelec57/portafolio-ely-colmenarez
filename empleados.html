@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Calculadora Riesgo Cero | Ely Colmenarez</title>
+	<title>CRUD Empleados (React) | Ely Colmenarez</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
@@ -33,6 +33,7 @@
         .glass { @apply bg-dark-card/50 backdrop-blur-xl border border-white/10; }
         .btn-primary { @apply px-6 py-3 bg-primary-600 hover:bg-primary-500 text-white rounded-full font-semibold transition-all duration-300 shadow-lg shadow-primary-600/20 transform hover:-translate-y-1; }
         .btn-secondary { @apply px-6 py-3 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full font-semibold transition-all duration-300; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
     </style>
 </head>
 
@@ -60,57 +61,80 @@
 					<span
 						class="px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-xs font-bold uppercase tracking-widest">React</span>
 					<span
-						class="px-4 py-1.5 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 rounded-full text-xs font-bold uppercase tracking-widest">Tailwind
-						CSS</span>
+						class="px-4 py-1.5 bg-red-500/10 border border-red-500/20 text-red-400 rounded-full text-xs font-bold uppercase tracking-widest">Laravel
+						API</span>
 					<span
-						class="px-4 py-1.5 bg-orange-500/10 border border-orange-500/20 text-orange-400 rounded-full text-xs font-bold uppercase tracking-widest">HTML5</span>
+						class="px-4 py-1.5 bg-green-500/10 border border-green-500/20 text-green-400 rounded-full text-xs font-bold uppercase tracking-widest">Node.js</span>
 				</div>
-				<h1 class="text-5xl md:text-6xl mb-6">Calculadora Riesgo Cero</h1>
+				<h1 class="text-5xl md:text-6xl mb-6">CRUD Empleados (Full-Stack)</h1>
 				<p class="text-xl text-slate-400 leading-relaxed max-w-2xl">
-					Herramienta financiera de precisión para el cálculo de conversión de divisas, integrando tasas de
-					cambio dinámicas por país.
+					Aplicación para la gestión de personal conectada a múltiples backends, demostrando versatilidad en
+					el ecosistema JavaScript.
 				</p>
 			</div>
 
-			<div class="glass p-4 rounded-[2.5rem] mb-16 overflow-hidden">
-				<img src="images/riesgocero.webp" alt="Calculadora Preview"
-					class="w-full h-auto rounded-[2rem] shadow-2xl">
+			<!-- Image Gallery / Grid -->
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+				<div class="glass p-2 rounded-3xl overflow-hidden">
+					<img src="images/react1.png" alt="Screen 1" class="w-full h-auto rounded-2xl">
+				</div>
+				<div class="glass p-2 rounded-3xl overflow-hidden">
+					<img src="images/react2.png" alt="Screen 2" class="w-full h-auto rounded-2xl">
+				</div>
+				<div class="glass p-2 rounded-3xl overflow-hidden">
+					<img src="images/react3.png" alt="Screen 3" class="w-full h-auto rounded-2xl">
+				</div>
+				<div class="glass p-2 rounded-3xl overflow-hidden">
+					<img src="images/react4.png" alt="Screen 4" class="w-full h-auto rounded-2xl">
+				</div>
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
 				<div class="md:col-span-2 space-y-8">
 					<section>
-						<h2 class="text-2xl mb-4">Propósito del Sistema</h2>
+						<h2 class="text-2xl mb-4">Arquitectura del Proyecto</h2>
+						<p class="text-slate-400 text-lg leading-relaxed mb-4">
+							Este proyecto demuestra una implementación completa de una aplicación CRUD (Create, Read,
+							Update, Delete) utilizando React para el frontend.
+						</p>
 						<p class="text-slate-400 text-lg leading-relaxed">
-							Esta aplicación web permite a los usuarios calcular montos exactos en diferentes divisas
-							basándose en el precio del dólar actual y las tasas de cambio regionales. Es una herramienta
-							esencial para el sector financiero y el comercio internacional.
+							Lo que hace especial a este proyecto es su capacidad de interoperar con dos backends
+							diferentes: una API diseñada en <span class="text-white font-medium">Laravel 9</span> y otra
+							en <span class="text-white font-medium">Node.js (Express)</span>.
 						</p>
 					</section>
 
 					<section>
-						<h2 class="text-2xl mb-4">Highlights Técnicos</h2>
+						<h2 class="text-2xl mb-4">Stack Tecnológico</h2>
 						<ul class="space-y-4">
 							<li class="flex items-start gap-4">
 								<div
 									class="mt-1 w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
 									<i data-lucide="check" class="w-4 h-4 text-primary-400"></i>
 								</div>
-								<span>React para una interfaz de usuario reactiva y rápida.</span>
+								<span><strong>Frontend:</strong> React con Axios para consumo de servicios REST.</span>
 							</li>
 							<li class="flex items-start gap-4">
 								<div
 									class="mt-1 w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
 									<i data-lucide="check" class="w-4 h-4 text-primary-400"></i>
 								</div>
-								<span>Lógica de cálculo desacoplada para fácil mantenimiento.</span>
+								<span><strong>Backend 1:</strong> Laravel 9 (PHP) con base de datos relacional.</span>
 							</li>
 							<li class="flex items-start gap-4">
 								<div
 									class="mt-1 w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
 									<i data-lucide="check" class="w-4 h-4 text-primary-400"></i>
 								</div>
-								<span>Diseño atómico utilizando Tailwind CSS.</span>
+								<span><strong>Backend 2:</strong> Node.js + Express para alta concurrencia.</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<div
+									class="mt-1 w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
+									<i data-lucide="check" class="w-4 h-4 text-primary-400"></i>
+								</div>
+								<span><strong>UI:</strong> Bootstrap para estructura y SweetAlert2 para notificaciones
+									premium.</span>
 							</li>
 						</ul>
 					</section>
@@ -118,16 +142,12 @@
 
 				<div class="space-y-8">
 					<div class="glass p-8 rounded-3xl">
-						<h3 class="text-xl mb-6">Enlaces</h3>
+						<h3 class="text-xl mb-6">Explorar</h3>
 						<div class="flex flex-col gap-4">
-							<a href="#" class="btn-primary w-full text-center flex items-center justify-center gap-2">
-								<i data-lucide="external-link" class="w-4 h-4"></i>
-								Ver Proyecto
-							</a>
 							<a href="https://github.com/elymelec57/" target="_blank"
-								class="btn-secondary w-full text-center flex items-center justify-center gap-2">
+								class="btn-primary w-full text-center flex items-center justify-center gap-2">
 								<i data-lucide="github" class="w-4 h-4"></i>
-								Git Profile
+								Ver Repositorio
 							</a>
 						</div>
 					</div>
